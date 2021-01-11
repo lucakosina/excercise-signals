@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy as sp
@@ -20,3 +22,6 @@ plt.title("Spectrum of a square signal")
 plt.ylabel("Spectral Intensity / Decibel")
 plt.xlabel("Frequency")
 plt.show()
+
+
+
