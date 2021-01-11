@@ -26,3 +26,5 @@ plt.title("Spectrum of a sawtooth signal")
 plt.ylabel("Spectral Intensity / Decibel")
 plt.xlabel("Frequency")
 plt.show()
+
+
