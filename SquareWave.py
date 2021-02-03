@@ -22,3 +22,7 @@ plt.xlabel("Frequency")
 plt.show()
 
 
+def func(x, a, b, c, d):
+    return a * np.sinc(b*x-c) + d 
+popt, pcov = sp.optimize.curve_fit(func, f3, p3)
+print(popt)
