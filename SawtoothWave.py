@@ -17,13 +17,17 @@ plt.show()
 
 
 f_max_4 = (1/st_4)/2
-p4 = 20*np.log10(np.abs(np.fft.rfft(signal_4)-5))
+p4 = 20*np.log10(np.abs(np.fft.rfft(signal_4)-1))
 f4 = np.linspace(0, f_max_4, len(p4))
-k4 = 14 + 28*np.sinc(f4*5-5) 
+k4 = 2.53209 + 1.53636*np.sinc(f4*0.75085-1.53636) 
 plt.plot(f4, p4, '-', f4, k4, '-.')
 plt.title("Spectrum of a sawtooth signal")
 plt.ylabel("Spectral Intensity / Decibel")
 plt.xlabel("Frequency")
 plt.show()
 
+def func(x, a, b, c, d):
+    return a * np.sinc(b*x-c) + d 
+popt, pcov = sp.optimize.curve_fit(func, f4, p4)
+print(popt)
 
