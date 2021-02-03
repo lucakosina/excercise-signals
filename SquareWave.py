@@ -14,7 +14,7 @@ plt.show()
 f_max_3 = (1/st_3)/2
 p3 = 20*np.log10(np.abs(np.fft.rfft(signal_3)))
 f3 = np.linspace(0, f_max_3, len(p3))
-k3 = 2.4683 + 2.4084*np.exp(-1.3239*f3 + 2.1310) * np.cos(1.4990e-04*f3 - 1.2201)
+k3 = 2.5895 + 6.1585e+02*np.exp(-f3) * np.cos(-8.8052e-03*f3 - 7.8218)
 plt.plot(f3, p3, '-', f3, k3, '-.')
 plt.title("Spectrum of a square signal")
 plt.ylabel("Spectral Intensity / Decibel")
@@ -22,7 +22,7 @@ plt.xlabel("Frequency")
 plt.show()
 
 
-def func(x, a, b, c, d, e, f):
-    return a * np.exp(-b*x+c) * np.cos(d*x+e) + f
+def func(x, a, b, c, d):
+    return a * np.exp(-x) * np.cos(b*x+c) + d
 popt, pcov = sp.optimize.curve_fit(func, f3, p3, maxfev = 5000)
 print(popt)
