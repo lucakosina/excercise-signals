@@ -20,7 +20,14 @@ f_max_4 = (1/st_4)/2
 p4 = 20*np.log10(np.abs(np.fft.rfft(signal_4)-1))
 f4 = np.linspace(0, f_max_4, len(p4))
 delta_f_4 = f_max_4/(len(p4)-1)
-k4 = 42.1127*signal.unit_impulse(np.shape(f4), idx = int(1/delta_f_4)) 
+k4 = np.arange(0, len(f4), 1)
+def delta(k4):
+    for i in range(0, len(k4)):
+        if k4==1:
+            return 1
+        else:
+            return 0
+#k4 = 42.1127*signal.unit_impulse(np.shape(f4), idx = int(1/delta_f_4)) 
 plt.plot(f4, p4, '-', f4, k4, '-.')
 plt.title("Spectrum of a sawtooth signal")
 plt.ylabel("Spectral Intensity / Decibel")
