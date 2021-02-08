@@ -26,3 +26,5 @@ def func(x, a, b, c, d, e):
     return a * np.exp(-x*e) * np.cos(b*x+c) + d
 popt, pcov = sp.optimize.curve_fit(func, f3, p3, maxfev = 5000)
 print(popt)
+
+
