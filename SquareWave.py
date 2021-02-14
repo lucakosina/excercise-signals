@@ -15,7 +15,7 @@ f_max_3 = (1/st_3)/2
 p3 = 20*np.log10(np.abs(np.fft.rfft(signal_3)))
 f3 = np.linspace(0, f_max_3, len(p3))
 k3 = -308 * np.sinc(0.09*f3 + 1.01) + 5
-#6.2233 + 8.6426e+01*np.exp(-f3*1.9627e-02) * np.cos(-6.2831*f3 - 2.1871e+02)
+#k3 = 6.2233 + 6.8e+01*np.exp(-f3*10e-02) * np.cos(-15*f3 - 2.1871e+02)
 plt.plot(f3, p3, '-', f3, k3, '.')
 plt.title("Spectrum of a square signal")
 plt.ylabel("Spectral Intensity / Decibel")
