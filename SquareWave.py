@@ -15,7 +15,7 @@ plt.show()
 f_max_3 = (1/st_3)/2
 p3 = 20*np.log10(np.abs(np.fft.rfft(signal_3)))
 f3 = np.linspace(0.0001, f_max_3, len(p3))
-k3 = 3.5288 * (np.log(f3*0.2e-04)/np.log(0.5)) + 10
+k3 = 3.4 * (np.log(f3*0.2e-04)/np.log(0.5)) + 10
 #7e+01 * np.exp(-f3*5e-02) + 4e+01
 #-308 * np.sinc(0.09*f3 + 1.01) + 5
 #k3 = 6.2233 + 6.8e+01*np.exp(-f3*10e-02) * np.cos(-15*f3 - 2.1871e+02)
